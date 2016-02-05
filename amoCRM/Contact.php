@@ -55,11 +55,7 @@ class Contact extends Element {
      * @return \amoCRM\Contact
      */
     public function setLeads(Leads $leads) {
-//        if ($this->leads instanceof Leads) {
-//            $this->leads->mergeLeads($leads);
-//        } else {
-            $this->leads = $leads;
-//        }
+        $this->leads = $leads;
         return $this;
     }
 

@@ -57,8 +57,7 @@ class Element {
     }
 
     protected function isLoaded($isLoaded) {
-        \validateType::isBoolean($isLoaded);
-        $this->isLoaded = $isLoaded;
+        $this->isLoaded = (bool) $isLoaded;
     }
 
     public static function createFromId($id) {

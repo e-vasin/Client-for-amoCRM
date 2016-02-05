@@ -52,11 +52,7 @@ class Contacts extends Collection {
         return $this->getList($query, $limit, $offset);
     }
 
-    public function fromArray($array) {
-        if (is_null($array)) {
-            return $this;
-        }
-        \validateType::isArray($array);
+    public function fromArray(array $array = []) {
         foreach ($array as $array) {
             $this->add(Contact::createFromArray($array));
         }

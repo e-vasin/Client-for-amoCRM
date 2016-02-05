@@ -54,7 +54,7 @@ class Leads extends Collection {
         return $this->getList($query, $limit, $offset);
     }
 
-    public function fromArray($array) {
+    public function fromArray(array $array) {
         if (is_null($array)) {
             return $this;
         }
@@ -65,13 +65,13 @@ class Leads extends Collection {
         return $this;
     }
 
-    public static function createFromArray($array) {
+    public static function createFromArray(array $array) {
         $leads = new self;
         $leads->fromArray($array);
         return $leads;
     }
     
-    public function fromArrayId($array) {
+    public function fromArrayId(array $array) {
         if (is_null($array)) {
             return $this;
         }

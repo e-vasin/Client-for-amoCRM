@@ -20,7 +20,7 @@ trait UpdatedCollection {
     }
 
     public function upload() {
-        $entityName = strtolower(end(explode('\\', __CLASS__)));
+        $entityName = strtolower(@end(explode('\\', __CLASS__)));
         $data['request'][$entityName] = $this->toArray();
         $response = $this->getResponse($entityName, ['action' => 'set'], $data);
         if (isset($response[$entityName]['add'])) {

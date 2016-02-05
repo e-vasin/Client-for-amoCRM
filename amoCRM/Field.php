@@ -50,12 +50,12 @@ class Field extends Element {
      * @return \amoCRM\Field
      */
     public function setName($name) {
-        $this->name = $name;
+        $this->name = (string) $name;
         return $this;
     }
     
     public function setEnum($enum) {
-        $this->enum = $enum;
+        $this->enum = (string) $enum;
         return $this;
     }
 
@@ -65,7 +65,7 @@ class Field extends Element {
      * @return \amoCRM\Field
      */
     public function setCode($code) {
-        $this->code = $code;
+        $this->code = (string) $code;
         return $this;
     }
 
@@ -75,8 +75,7 @@ class Field extends Element {
      * @return \amoCRM\Field
      */
     public function setType($type) {
-        \validateType::isConstant($type, __CLASS__);
-        $this->type = $type;
+        $this->type = (integer) $type;
         return $this;
     }
 
@@ -87,8 +86,7 @@ class Field extends Element {
      * @throws Exception
      */
     public function setElementType($type) {
-        \validateType::isConstant($type, __CLASS__);
-        $this->elementType = $type;
+        $this->elementType = (integer) $type;
         return $this;
     }
 
@@ -98,7 +96,7 @@ class Field extends Element {
      * @return \amoCRM\Field
      */
     public function setOrigin($origin) {
-        $this->origin = $origin;
+        $this->origin = (string) $origin;
         return $this;
     }
     
@@ -115,7 +113,7 @@ class Field extends Element {
         return $this;
     }
 
-    public static function createFromArray($array) {
+    public static function createFromArray(array $array) {
         $field = new self($array['name']);
         $field->fromArray($array);
         return $field;

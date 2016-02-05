@@ -25,11 +25,7 @@ class Values extends Collection {
         return $this;
     }
 
-    public function fromArray($array) {
-        if (is_null($array)) {
-            return $this;
-        }
-        \validateType::isArray($array);
+    public function fromArray(array $array) {
         foreach ($array as $array) {
             $this->add(Value::createFromArray($array));
         }
